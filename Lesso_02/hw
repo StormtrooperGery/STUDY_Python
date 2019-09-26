@@ -1,1 +1,37 @@
-
+import random
+print("Приветсвую! Сыграйте игру на 2-их, проиграет тот  кто заберёт последнюю спичку!")
+N = random.randint(10, 20)
+pl1 = pl2 = ch = None
+#print(N)
+while N > 0:
+    while N >= 1:
+        pl1 = int(input("Игрок 1, введите количество забераемых спичек от 1-3: "))
+        if pl1 > 3:
+            print("Не жадничай :) ")
+            continue
+        elif pl1 <= 0:
+            print("Вы ввили меньше 1, попробуйте еще раз!")
+            continue
+        N = N - pl1
+        #print(N)
+        if N < 1:
+            print("Проиграл Игрок 1")
+            break
+        else:
+            break
+    while N >= 1:
+        pl2 = int(input("Игрок 2, введите количество забераемых спичек от 1-3: "))
+        if pl2 > 3:
+            print("Не жадничай :) ")
+            continue
+        elif pl2 <= 0:
+            print("Вы ввили меньше 1, попробуйте еще раз!")
+            continue
+        N = N - pl2
+        #print(N)
+        if N < 1:
+            print("Проиграл Игрок 2")
+            break
+        else:
+            break
+print("Game Over")
