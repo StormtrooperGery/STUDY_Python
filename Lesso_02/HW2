@@ -5,5 +5,5 @@ if easy_code[1] % 1 > 0:
     easy_code2 = list(range(int(easy_code[0] // 1 + 1), int((easy_code[1]+1))))
     print(easy_code2)
 else:
-    easy_code2 = list(range(int(easy_code[0]//1 + 1), int((easy_code[1]))))
+    easy_code2 = list(range(int(easy_code[0] // 1 + 1), int((easy_code[1]))))
     print(easy_code2)
