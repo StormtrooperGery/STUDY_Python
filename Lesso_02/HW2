@@ -9,3 +9,5 @@ elif easy_code[1] % 1 > 0:
 else:
     easy_code2 = list(range(int(easy_code[0] // 1 + 1), int((easy_code[1]))))
     print(easy_code2)
+
+#Над этим кодом работали вместе с Константиновым
