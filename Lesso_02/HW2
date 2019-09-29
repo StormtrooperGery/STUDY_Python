@@ -1,13 +1,13 @@
 easy_code = [float(x) for x in input("Введите 2 числа: ").split()]
 easy_code.sort()
-if easy_code[1] < 0:
-    easy_code2 = list(range(int(easy_code[0] // 1 + 1), int((easy_code[1]))))
-    print(easy_code2)
-elif easy_code[1] % 1 > 0:
-    easy_code2 = list(range(int(easy_code[0] // 1 + 1), int((easy_code[1]+1))))
-    print(easy_code2)
-else:
-    easy_code2 = list(range(int(easy_code[0] // 1 + 1), int((easy_code[1]))))
-    print(easy_code2)
+if easy_code[-1] % 1 > 0:
+    easy_code[-1] = easy_code[-1]+1
+easy_code2 = list(range(int(easy_code[0]), int(easy_code[1])))
+pos = []
+for x in easy_code2:
+    if x > 0:
+        pos.append(x)
+        continue
+print(pos)
 
 #Над этим кодом работали вместе с Константиновым
