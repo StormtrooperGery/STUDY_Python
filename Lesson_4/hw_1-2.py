@@ -1,13 +1,11 @@
-def digit_count():
+def digitline_count():
     num = [int(i) for i in text if i.isdigit()]
     digitdict = {'Количество цифр в тексте': len(num)}
-    return digitdict
-
-
-def line_count():
     thislinedict = dict.fromkeys(['Количество строк'], thisnumberlist[0])
-    return thislinedict
-
+    seprdict = {'=': '=== Начало = Словаря = Символов ======='}
+    digitdict.update(thislinedict)
+    digitdict.update(seprdict)
+    return digitdict
 
 def word_count():
     thisworddict = dict(zip(text6, thisnumberlist2))
@@ -20,24 +18,12 @@ def char_count():
 
 
 def text_stat():
-    ndic = {**digit_count(), **line_count(), **char_count(), **word_count()}
+    seprdict2 = {'==': '=== Конец = Словаря = Символов ===='}
+    seprdict3 = {'===': '=== Начало = Словаря = Слов ===='}
+    seprdict4 = {'====': '=== Конец = Словаря = Слов ===='}
+    ndic = {**digitline_count(), **char_count(), **seprdict2, **seprdict3, **word_count(), **seprdict4}
     return ndic
 
-
-def text_print0():
-    ndic1 = {'==== Открытие': 'словаря = символов  ===='}
-    linedigetprint = {**digit_count(), **line_count(), **ndic1}
-    return linedigetprint
-
-
-def text_sepr():
-    seprdict = {'==== Закрытие': 'словаря = символов ====\n', '==== Открытие': 'словаря = слов ===='}
-    return seprdict
-
-
-def text_sepr2():
-    ndic2 = {'==== Закрытие': 'словаря = слов ===='}
-    return ndic2
 text = ""
 stopword = ""
 while True:
@@ -45,7 +31,6 @@ while True:
     if line.strip() == stopword:
         break
     text += "%s\n" % line
-
 thisnumberlist = []
 thisnumberlist2 = []
 
@@ -68,20 +53,7 @@ for x in text3:
 for x in text6:
     thisnumberlist2.append(text4.count(x))
 
-for y in text_print0():                         # Начало вывода текста для пользователя
-    print(y, '=', text_print0()[y])
-
-for i in char_count():
-    print({i}, '=', char_count()[i])
-
-for y in text_sepr():
-    print(y, '=', text_sepr()[y])
-
-for i in word_count():
-    print({i}, '=', word_count()[i])
-
-for y in text_sepr2():
-    print(y, '=', text_sepr2()[y])
+print(''.join(['%r = %s \n' % (key, value) for (key, value) in text_stat().items()]))
 
 
 #Работали над этим ВЕЛОСИПЕДИЩЕМ вместе с Константиновым. Готовы к правкам.
