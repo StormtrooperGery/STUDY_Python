@@ -53,7 +53,7 @@ def text_stat(text, *args):
 
 if __name__ == '__main__':
 
-    print("Программа подсчёта статистики теста!\nВведиет текс!:")
+    print("Программа подсчёта статистики теста!\nВведиет текс:")
 
     text = ""
     stopword = ""
@@ -63,7 +63,7 @@ if __name__ == '__main__':
             break
         text += "%s\n" % line
 
-    arg = input(str("АРГУМЕНТ ЧЁЁ ПОПУТАЛ?!"))
+    arg = input(str("Дополнительный аргумент:\n"))
     digit = text_stat(text, arg).get("digit_stat")
     line_ = text_stat(text, arg).get("line_stat")
     char = text_stat(text, arg).get("chars_stat")
