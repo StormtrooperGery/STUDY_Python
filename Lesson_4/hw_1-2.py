@@ -24,36 +24,38 @@ def text_stat():
     ndic = {**digitline_count(), **char_count(), **seprdict2, **seprdict3, **word_count(), **seprdict4}
     return ndic
 
-text = ""
-stopword = ""
-while True:
-    line = input()
-    if line.strip() == stopword:
-        break
-    text += "%s\n" % line
-thisnumberlist = []
-thisnumberlist2 = []
 
-text = text.casefold()                          # text case fold
-text1 = list(text)                              # text1 необходим для функции digit_count
-text2 = set(text1)                              # text 2 множество
-text3 = list(text2)                             # text 3 список
-text3.sort()                                    # text 3 сортирований список
+if __name__ == '__main__':
+    text = ""
+    stopword = ""
+    while True:
+        line = input()
+        if line.strip() == stopword:
+            break
+        text += "%s\n" % line
+    thisnumberlist = []
+    thisnumberlist2 = []
 
-text4 = text.replace("\n", " ")                 # text 4 строка без спец символов
-text4 = text4.split(" ")                        # text 4 список слов
-text4.remove("")                                # text 4 убрали пустую строку
-text5 = set(text4)                              # text 5 множество слов
-text6 = list(text5)                             # text 6 список слов
-text6.sort()                                    # text 6 Сортированый список слов
+    text = text.casefold()                          # text case fold
+    text1 = list(text)                              # text1 необходим для функции digit_count
+    text2 = set(text1)                              # text 2 множество
+    text3 = list(text2)                             # text 3 список
+    text3.sort()                                    # text 3 сортирований список
 
-for x in text3:
-    thisnumberlist.append(text.count(x))
+    text4 = text.replace("\n", " ")                 # text 4 строка без спец символов
+    text4 = text4.split(" ")                        # text 4 список слов
+    text4.remove("")                                # text 4 убрали пустую строку
+    text5 = set(text4)                              # text 5 множество слов
+    text6 = list(text5)                             # text 6 список слов
+    text6.sort()                                    # text 6 Сортированый список слов
 
-for x in text6:
-    thisnumberlist2.append(text4.count(x))
+    for x in text3:
+        thisnumberlist.append(text.count(x))
 
-print(''.join(['%r = %s \n' % (key, value) for (key, value) in text_stat().items()]))
+    for x in text6:
+        thisnumberlist2.append(text4.count(x))
+
+    print(''.join(['%r = %s \n' % (key, value) for (key, value) in text_stat().items()]))
 
 
 #Работали над этим ВЕЛОСИПЕДИЩЕМ вместе с Константиновым. Готовы к правкам.
